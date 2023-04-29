@@ -7,6 +7,7 @@ Replacing a Bastion Host with Amazon EC2 Systems Manager.
 
 
 
+<img width="919" alt="Screen Shot 2023-04-29 at 3 57 38 PM" src="https://user-images.githubusercontent.com/32661402/235299132-7cf51baa-1143-4504-8f01-cbea72d8282f.png">
 
 
 
