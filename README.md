@@ -4,3 +4,40 @@ Replacing a Bastion Host with Amazon EC2 Systems Manager.
 
 
 ![Uploading Screen Shot 2023-04-29 at 3.48.57 PM.png…]()
+
+
+
+
+
+
+
+
+
+## Pre-requistes
+
+#Create a EC2 Instance in Private subnet
+
+* create a IAM role attach to the EC2
+* Install SSM agent using the below commands as part of userdata.
+
+```
+#!/bin/bash
+cd /tmp
+sudo yum install -y https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm
+sudo systemctl enable amazon-ssm-agent
+sudo systemctl start amazon-ssm-agent
+```
+
+
+# create vpc endpoints for the following services
+com.amazonaws.[region].ec2messages.
+com.amazonaws.[region].ssmmessages.
+com.amazonaws.[region].ssm
+
+
+* The security group must allow inbound HTTPS (port 443) traffic from the resources in your VPC that communicate with the service.
+
+
+
+
+
